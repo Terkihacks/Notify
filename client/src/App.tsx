@@ -1,6 +1,7 @@
 import TodoForm from "./component/TodoForm";
 import TodoList from "./component/TodoList";
 import useTodos from "./hooks/useTodos";
+import { ToastContainer } from 'react-toastify';
 
 
 function App () {
@@ -21,7 +22,7 @@ function App () {
       onCompletedChange={setTodoCompleted}
       onDelete={deleteTodo}
       />
-  
+       <ToastContainer />
     </div>
    </main>
  

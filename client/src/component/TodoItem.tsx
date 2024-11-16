@@ -1,5 +1,7 @@
 import { Todotypes } from "../types/type"
 import { Trash2 } from "lucide-react";
+import { Pen } from 'lucide-react';
+
 
 interface TodoItemProps{
  todo:Todotypes;
@@ -27,6 +29,12 @@ export default function TodoItem({todo,onCompletedChange,onDelete}:TodoItemProps
       onClick={() => onDelete(todo.id)}
       >
         <Trash2  size={20} className="text-gray-500"/>
+      </button>
+
+      <button
+      
+      >
+      <Pen size={20} className="text-black" />
       </button>
     </div>
   )

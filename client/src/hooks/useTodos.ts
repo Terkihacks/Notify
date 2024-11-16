@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { Todotypes } from "../types/type";
 import { dummyData } from "../data/todos";
-import{createTodo} from "../services/api"
+import{createTodo} from "../services/api";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default function useTodos(){
     const[todos,setTodos]  = useState(()=>{
@@ -48,8 +52,9 @@ export default function useTodos(){
                 },
                 ...prevTodos,
               ]);
-              
-    console.log('Todo created successfully:', createdTodo);
+                 // Display a success message
+      toast.success('Todo created successfully!');
+     console.log('Todo created successfully:', createdTodo);
 
         } catch(error){
             console.log('Error creating todo:', error);
