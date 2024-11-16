@@ -19,7 +19,7 @@ export default function TodoItem({todo,onCompletedChange,onDelete}:TodoItemProps
          className="scale-125"
          />
          <span className={todo.completed ? " line-through text-gray-400 ": " " }>
-         {todo.tittle}
+         {todo.title}
          </span>
       </label>
       <button

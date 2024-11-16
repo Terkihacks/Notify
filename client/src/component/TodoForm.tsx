@@ -1,6 +1,6 @@
 import { useState } from "react";
 interface  TodoFormProps{
-  onSubmit:(tittle:string) => void;
+  onSubmit:(title:string) => void;
 }
 export default function TodoForm  ({onSubmit}:TodoFormProps) {
 

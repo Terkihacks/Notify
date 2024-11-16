@@ -31,9 +31,9 @@ export default function useTodos(){
     //     ...prevTodos
     //   ]);
     // }
-    async function addTodoItem(tittle:string){
+    async function addTodoItem(title:string){
         const newTodo = {
-            tittle,
+            title,
             completed:false,
         };
 
@@ -43,7 +43,7 @@ export default function useTodos(){
               setTodos((prevTodos) => [
                 {
                   id: createdTodo.id, // Use the ID from the database
-                  tittle: createdTodo.tittle,
+                  title: createdTodo.title,
                   completed: createdTodo.completed,
                 },
                 ...prevTodos,

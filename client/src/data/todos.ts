@@ -3,17 +3,17 @@ import { Todotypes } from "../types/type";
 export const dummyData :Todotypes[]= [
     {
         id:1,
-        tittle:"Like this video",
+        title:"Like this video",
         completed:false
     },
     {
         id:2,
-        tittle:"Watch Tutorial",
+        title:"Watch Tutorial",
         completed:false
     },
     {
         id:3,
-        tittle:"Sepa utatekwa",
+        title:"Sepa utatekwa",
         completed:false
     },
 ]

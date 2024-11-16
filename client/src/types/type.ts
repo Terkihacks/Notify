@@ -1,5 +1,5 @@
 export interface Todotypes{
     id:number;
-    tittle:string;
+    title:string;
     completed:boolean 
 }

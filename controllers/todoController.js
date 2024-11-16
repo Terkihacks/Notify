@@ -5,7 +5,7 @@ const db = require('../config/db');
 
 exports.createTodo = async(req,res) => {
     //Fetch data
-    const{title = '', completed = false} = req.body || {};
+    const{title,completed = false} = req.body || {};
     try{
         //Create a new todo
       const [result] = await db.execute ('INSERT INTO todo (title,completed) VALUES (?,?)',[title,completed]);
