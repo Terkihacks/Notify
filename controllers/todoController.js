@@ -5,18 +5,16 @@ const db = require('../config/db');
 
 exports.createTodo = async(req,res) => {
     //Fetch data
-    const{title} = req.body;
-    console.log('Request Body:', req.body);
-
+    const{title = '', completed = false} = req.body || {};
     try{
         //Create a new todo
-       await db.execute ('INSERT INTO todo  (tittle) VALUES (?)',[title]);
-       const newTodoId = result[0].insertId;
+      const [result] = await db.execute ('INSERT INTO todo (title,completed) VALUES (?,?)',[title,completed]);
+       const newTodoId = result.insertId;
         res.status(201).json(
             {
                 id:newTodoId,
                 title,
-                // completed:false,
+                completed,
                 message: 'Todo created successfully'
             });
     }catch(error){
@@ -25,12 +23,9 @@ exports.createTodo = async(req,res) => {
     }
 };
 exports.getAllTodo = async (req, res) => {
-    const { title } = req.body || {}; // This might not be necessary
-
-    try {
     
+    try {
         const [rows] = await db.execute('SELECT * FROM todo');
-        
         res.status(200).json({
             message: 'Todos retrieved successfully',
             data: rows,
@@ -39,7 +34,7 @@ exports.getAllTodo = async (req, res) => {
         console.error('Error retrieving todos:', error);
         res.status(500).json({ message: 'Error retrieving todos' });
     }
-};
+}
 
 exports.getTodoById = async (req,res) =>{
     //Fetch data

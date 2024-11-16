@@ -2,11 +2,11 @@
 
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/notify/'
+const API_URL = 'http://localhost:5000/notify/newTodo'
 
 //Post a todo item
 
-export const createTodo = async(todo:{tittle:string}) =>{
+export const createTodo = async(todo:{tittle:string,completed:boolean}) =>{
     const res = await axios.post(API_URL,todo);
     return res.data;
 }
