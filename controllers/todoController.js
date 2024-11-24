@@ -22,6 +22,7 @@ exports.createTodo = async(req,res) => {
     res.status(500).json({message:'Error creating todo'});
     }
 };
+
 exports.getAllTodo = async (req, res) => {
     
     try {
@@ -62,7 +63,7 @@ exports.getTodoById = async (req,res) =>{
 
 // }
 
-exports.deleteTodo = async(req,res) =>{
+exports.deleteTodobyId = async(req,res) =>{
   //Fetch data
   const{id} = req.params;
   try{

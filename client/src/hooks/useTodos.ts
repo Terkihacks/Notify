@@ -65,6 +65,8 @@ export default function useTodos(){
         //To delete we use filter
         setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id))
      }
+
+     
      return{
         todos,
         setTodoCompleted,
